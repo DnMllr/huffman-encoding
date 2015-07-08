@@ -39,8 +39,8 @@ void q_insert ( Tree_Queue * queue, H_Tree * tree )
     Tree_Queue * current_q = queue;
 
     while ( current_q->tree->frequency < tree->frequency )
-        if ( current_q->next )
-            current_q = current_q->next;
+        if ( current_q->next ) current_q = current_q->next;
+        else break;
 
     if ( current_q->next )
     {
@@ -77,12 +77,29 @@ void q_destroy ( Tree_Queue * queue )
 H_Tree * h_tree_from_a_vec ( A_VEC * input )
 {
 
-    Tree_Queue queue;
+    Tree_Queue * queue = ( Tree_Queue * )malloc( sizeof( Tree_Queue ) );
     int i = input->currOccupied;
     int a_vec_freq;
     int queue_freq;
 
-    
+    while ( i-- )
+    {
+
+        a_vec_freq = input->nums[ i ];
+
+        if ( queue->tree != NULL )
+        {
+
+            queue_freq = queue->tree->frequency;
+            if ( a_vec_freq <= queue_freq )
+            {
+
+                
+            }
+
+        }
+
+    }
 
 }
 
