@@ -120,3 +120,24 @@ void a_vec_print ( A_VEC * target )
 
 }
 
+void a_vec_pop ( A_VEC * target, char * c, int * i )
+{
+
+    int tail = --target->currOccupied;
+
+    *c = target->chars[ tail ];
+    *i = target->nums[ tail ];
+
+    target->chars[ tail ] = 0;
+    target->nums[ tail ] = 0;
+
+}
+
+void a_vec_destroy ( A_VEC * target )
+{
+
+    free( target->chars );
+    free( target->nums );
+
+}
+

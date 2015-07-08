@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "a_vec.h"
 
 int import_file ( char * path, FILE ** f, long int * size )
@@ -62,9 +63,9 @@ int encode ( char * path )
         }
 
     printf( "successfully encoded %s\n", path );
-    a_vec_print( &flat );
 
     return 0;
+
 }
 
 int main ( int argc, char ** argv )

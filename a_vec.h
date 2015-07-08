@@ -14,4 +14,6 @@ int a_vec_insert ( A_VEC * target, char key );
 
 void a_vec_print ( A_VEC * target );
 
+void a_vec_pop ( A_VEC * target, char * c, int * i );
+
 #endif
